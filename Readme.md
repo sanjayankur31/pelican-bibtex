@@ -31,7 +31,7 @@ a list of publications, ready to be used in your Jinja2 template.
 Configuration is simply:
 
 ```python
-PUBLICATIONS_SRC = 'content/pubs.bib'
+MY_PUBLICATIONS_SRC = 'content/mypubs.bib'
 ```
 
 If the file is present and readable, you will be able to find the `publications`

@@ -25,7 +25,7 @@ def add_publications(generator):
 
     Configuration
     -------------
-    generator.settings['PUBLICATIONS_SRC']:
+    generator.settings['MY_PUBLICATIONS_SRC']:
         local path to the BibTeX file to read.
 
     Output
@@ -34,7 +34,7 @@ def add_publications(generator):
         List of tuples (key, year, text, bibtex, pdf, slides, poster).
         See Readme.md for more details.
     """
-    if 'PUBLICATIONS_SRC' not in generator.settings:
+    if 'MY_PUBLICATIONS_SRC' not in generator.settings:
         return
     try:
         from StringIO import StringIO
@@ -50,7 +50,7 @@ def add_publications(generator):
         logger.warn('`pelican_bibtex` failed to load dependency `pybtex`')
         return
 
-    refs_file = generator.settings['PUBLICATIONS_SRC']
+    refs_file = generator.settings['MY_PUBLICATIONS_SRC']
     try:
         bibdata_all = Parser().parse_file(refs_file)
     except PybtexError as e:
